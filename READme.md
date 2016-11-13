@@ -1,19 +1,27 @@
-title: EDA Project 1 READme.md
-author: Trevor Aeschliman
-
-For this assignment, for graphs were replicated and 4 PNG files were produced.  The code for each of these is in the respected plot1.r, plot2.r, etc.
-
-In order to run the code, the data needs to be downloaded from:
-
+# Getting and Cleaning Data Course Project READme.md
+## Trevor Aeschliman
 ======================================
 
-- https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
-Note:
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
-- The dataset has 2,075,259 rows and 9 columns. First calculate a rough estimate of how much memory the dataset will require in memory before reading into R. Make sure your computer has enough memory (most modern computers should be fine).
-- We will only be using data from the dates 2007-02-01 and 2007-02-02. One alternative is to read the data from just those dates rather than reading in the entire dataset and subsetting to those dates.
-- You may find it useful to convert the Date and Time variables to Date/Time classes in R using the strptime()  and as.Date() functions.
-- Note that in this dataset missing values are coded as ?.
+For each record it is provided:
 
-The data shows measurements of electric power consumption in one household with a one-minute sampling rate over a period of almost 4 years. Different electrical quantities and some sub-metering values are available.
+
+- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
+- Triaxial Angular velocity from the gyroscope. 
+- A 561-feature vector with time and frequency domain variables. 
+- Its activity label. 
+- An identifier of the subject who carried out the experiment.
+
+
+The file run_analysis.R does the following:
+
+*Merges the training and the test sets to create one data set.
+*Extracts only the measurements on the mean and standard deviation for each measurement.
+*Uses descriptive activity names to name the activities in the data set
+*Appropriately labels the data set with descriptive variable names.
+*From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+All variables are described in the file codebook.md.
